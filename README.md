@@ -1,2 +1,2 @@
-# CurrencyConversion
-Currency Conversion
+# Competitions
+Source code of diff competitions
