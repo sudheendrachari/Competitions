@@ -1,0 +1,19 @@
+/* style.css */
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+.cblock{
+	margin: 10px;
+}
+.cname{
+	margin-right: 5px;
+}
+#base_amount{
+	width: 75px;
+	text-align: center;
+}
+.base_cur_block{
+	margin: 0 auto;
+	display: block;
+	width: 125px;
+}
