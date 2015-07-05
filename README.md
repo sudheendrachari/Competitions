@@ -1,2 +1,2 @@
-# Competitions
-Source code of diff competitions
+###Sudheendrachari C <csc929[at]gmail[dot]com>
+Personal Git Repo
