@@ -1,0 +1,18 @@
+{
+  "name": "bms-search",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Sudheendrachari C",
+  "scripts": {
+    "start": "node app.js > baahubali.log &"
+  },
+  "bugs": {},
+  "keywords": [],
+  "dependencies": {
+    "cron": "^1.0.9",
+    "nodemailer": "^1.4.0",
+    "request": "^2.58.0"
+  },
+  "private": true,
+  "license": "MIT"
+}
