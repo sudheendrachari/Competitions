@@ -6,7 +6,9 @@
 	[
 		"HTML-CSS-JS Prettify",
 		"Package Control",
+		"SideBarEnhancements",
 		"SublimeLinter",
-		"SublimeLinter-jshint"
+		"SublimeLinter-jshint",
+		"TortoiseSVN"
 	]
 }
