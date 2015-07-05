@@ -1,0 +1,8 @@
+{
+"cmd": ["node", "$file"],
+"selector": "app.js",
+"windows":
+    {
+    	"cmd": ["node", "$file"],
+    }
+}
