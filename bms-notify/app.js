@@ -69,8 +69,8 @@ process.env.TZ = 'Asia/Kolkata';
 	  }, function () {
 	   console.log('job done');
 	  },
-	  true,
-	  TIME_ZONE /* Start the job right now */
+	  true, /* Start the job right now */
+	  TIME_ZONE 
 	);
 	console.log(MOVIE_NAME+ ' Hunt Begins at '+ new Date());
 
