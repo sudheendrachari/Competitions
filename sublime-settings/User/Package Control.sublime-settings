@@ -1,6 +1,12 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
-		"Package Control"
+		"HTML-CSS-JS Prettify",
+		"Package Control",
+		"SublimeLinter",
+		"SublimeLinter-jshint"
 	]
 }
