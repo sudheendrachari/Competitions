@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="lv">
+
+<head>
+    <title>Lets Venture Dictionary</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/listnav.css">
+    <style type="text/css">
+    #alphaNav {
+        display: none;
+    }
+    
+    #alphaNav-nav {
+        width: 100%;
+        margin-left: 100px;
+    }
+    
+    #alphaNav-nav .ln-letters a {
+        font-size: 1.3em !important;
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 20px;
+    }
+    
+    section {
+        width: 90%;
+        height: 200px;
+        /*background: aqua;*/
+        margin: auto;
+        padding: 10px;
+    }
+    
+    div#one {
+        width: 80%;
+        height: auto;
+        float: left;
+    }
+    
+    div#two {
+        margin-left: 80%;
+        height: auto;
+        padding: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="showCase">
+        <!--     <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button>
+    <button ng-click='audio.restart()'>Stop</button>
+    <button ng-click='audio.muting = !audio.muting'>Mute</button>
+    <label>Current Time</label>
+     <input class='form-control' type=text ng-model='audio.currentTime'>
+     <label>Volume</label>
+     <input class='form-control' type=range min=0 max=1 step=0.01 ng-model='audio.volume'> -->
+     <div class="input-group margin-bottom-sm">
+       <span class="input-group-addon">Selected Word</span>
+       <input class="form-control disabled" type="text" ng-model="selectedWord" placeholder="Select a Word">
+     </div>
+        <section>
+            <div id="one">
+                <table datatable="ng" dt-options="dtOptions" dt-columns="dtColumnDefs" class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Meaning</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="entry in dictionary">
+                            <td>{{ entry.word }}</td>
+                            <td>{{ entry.description }}</td>
+                            <td></td>
+                            <td>
+                                <button type="button" ng-click="addFavourite($index)"  toggle-class="btn-primary btn-warning" class="btn btn-warning">
+                                <i class="fa fa-heart"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="two">
+                <div class="btn-group-vertical" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default btn-primary">Favourites List</button>
+                    <button type="button" class="btn btn-default disabled" ng-if="empty">No Bookmarks</button>
+                    <button type="button" class="btn btn-default" ng-repeat="(word, desc) in bookmarks">{{word}}</button>
+                    <a type="button" ng-if="!empty" ng-href="{{DOWNLOAD_BOOKMARKS}}" ng-class="{'disabled': empty}" class="btn btn-default btn-success" download>
+                        <i class="fa fa-download"></i> Download
+                    </a>
+                    <button type="button" ng-if="!empty" ng-class="{'disabled': empty}" class="btn btn-default btn-danger" ng-click="clearAll()">
+                        <i class="fa fa-trash-o"></i> Clear All
+                    </button>
+                </div>
+            </div>
+        </section>
+        <ul id="alphaNav">
+            <li ng-repeat="alpha in alphabets">{{alpha}}</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/jquery-listnav.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular.audio.js"></script>
+    <script type="text/javascript" src="js/angular-resource.js"></script>
+    <script type="text/javascript" src="js/angular-datatables.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
