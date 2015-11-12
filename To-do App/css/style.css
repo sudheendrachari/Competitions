@@ -1,0 +1,75 @@
+.header-panel{
+	background: #3F51B5;
+	color: #FFFFFF;
+}
+.btn.btn-fab i{
+	top: 0px;
+}
+
+#add-todo{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	margin-top: -30px;
+}
+
+#clearall{
+	position: absolute;
+	bottom: 50px;
+}
+
+[draggable=true] {
+    cursor: move;
+}
+.col-md-6, .col-md-12{
+	margin-top: 10px;
+}
+.dg{
+	width: 100%;
+	height: 50px;
+	display: table;	
+	text-align: center;
+	position: relative;
+}
+.dg p{
+	display: table-cell;
+	vertical-align: middle;
+}
+.dg .close{
+	/*position: absolute;*/
+	cursor: pointer;
+}
+
+.droppable{
+	width: 300px;
+	height: 100px;
+}
+
+.droppable, .dg{
+	padding: 5px;
+	/*margin: 5px;*/
+	/*border: 1px solid black;*/
+	border-radius: 2px;
+}
+
+#container {
+    width:100%;
+    height: 95vh;
+}
+#leftSection {
+    width:60%;
+    height: 95vh;
+    float:left;
+    /*background-color:red;*/
+    border-right: 1px solid black;
+}
+#rightSection {
+    width:30%;
+    height: 95vh;
+    float:left;
+    /*background-color:yellow;*/
+}
+
+#rightSection .close{
+	display: none;
+}
