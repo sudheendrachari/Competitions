@@ -4,6 +4,11 @@
 	[
 		"Vintage"
 	],
+	"index_exclude_patterns":
+	[
+		"/home/csc/Desktop/myPath-1B/.tmp*",
+		"*.log"
+	],
 	"material_theme_bold_tab": true,
 	"material_theme_accent_yellow": true, 
 	"material_theme_tabs_autowidth": true,
