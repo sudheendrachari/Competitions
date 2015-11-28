@@ -1,25 +1,25 @@
 {
-	
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"ignored_packages":
 	[
+		"TortoiseSVN",
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"index_exclude_patterns":
 	[
 		"/home/csc/Desktop/myPath-1B/.tmp*",
 		"*.log"
 	],
-	"material_theme_bold_tab": true,
-	"material_theme_accent_yellow": true, 
-	"material_theme_tabs_autowidth": true,
-	// "material_theme_contrast_mode": true,
-	"overlay_scroll_bars": "enabled",
 	"line_padding_top": 3,
-	// "line_padding_bottom": 3,
-	"always_show_minimap_viewport": true,
-	"bold_folder_labels": true,
-	"indent_guide_options": [ "draw_normal", "draw_active" ],   // Highlight active indent
-	// "font_options": [ "gray_antialias" ],
+	"material_theme_bold_tab": true,
+	"material_theme_tabs_autowidth": true,
+	"overlay_scroll_bars": "enabled",
 	"theme": "Material-Theme-Darker.sublime-theme"
 }
