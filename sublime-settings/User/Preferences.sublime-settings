@@ -1,7 +1,8 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"TortoiseSVN",
@@ -19,6 +20,7 @@
 	],
 	"line_padding_top": 3,
 	"material_theme_bold_tab": true,
+	"material_theme_panel_separator": true,
 	"material_theme_tabs_autowidth": true,
 	"overlay_scroll_bars": "enabled",
 	"theme": "Material-Theme-Darker.sublime-theme"
