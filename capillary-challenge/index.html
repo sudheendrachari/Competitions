@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="capillary">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/angular-resource.js"></script>
+</head>
+
+<body ng-controller="bookhub">
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper left" id="nav-search-bar" style="width:40%">
+            <form>
+                <div class="input-field">
+                    <input id="search" type="search" ng-model="search_input" required placeholder="Search">
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+        <div class="nav-wrapper left" id="logo-container" style="width:60%">
+            <a href="#" class="brand-logo left">{{title}}</a>
+            <a href="#" class="brand-logo right" id="bmtrack">Total : {{totalBooks}} | Bookmarks:{{bCount}}</a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+    </div>
+    <div class="container">
+            <!-- <div class="col hide-on-small-only m3 l2"> -->
+                <ul class="section table-of-contents">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#structure">Structure</a></li>
+                    <li><a href="#initialization">Intialization</a></li>
+                </ul>
+            <!-- </div> -->
+        <div class="row">
+            <h3 ng-show="noresults"> {{noresults}}</h3>
+            <div class="col s12 m3 bookTile" ng-repeat="book in books" id="bookTile{{book.id}}" ng-class="book.bm ? 'fav' : ''">
+                <div class="card small hoverable">
+                    <div class="card-image">
+                        <img ng-src="{{book.image}}">
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="modal-trigger waves-effect waves-light btn light-blue truncate" href="#modal{{book.id}}">
+                            {{book.name}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large red" ng-click="toggleBookmarks()">
+                <i class="fa fa-bookmark" ng-class="showBookmarks ? 'fa-close' : 'fa-bookmark'"></i>
+            </a>
+        </div>
+    </div>
+    <div id="modal{{book.id}}" class="modal" ng-repeat="book in books" initialize-modal>
+        <div class="modal-content">
+            <h4>{{book.name}}</h4>
+            <p>{{book.author}}</p>
+            <a class="btn-floating btn-large waves-effect waves-light red" ng-click="addBm(book.id)">
+                <i class="fa" ng-class="book.bm ? 'fa-bookmark': 'fa-bookmark-o' "></i>
+            </a>
+            <div class="row">
+                <div class="col s3">
+                    <img class="" width="150" ng-src="{{book.image}}">
+                </div>
+                <div class="col s9">
+                    <div class="row">
+                        <div class="chip tooltipped" data-position="top" data-delay="50" data-tooltip="Publisher">
+                            <i class="fa fa-leanpub"></i> {{book.details.Publisher}}
+                        </div>
+                        <div class="chip  tooltipped" data-position="top" data-delay="50" data-tooltip="ISBN">
+                            <i class="fa fa-hashtag"> </i> {{book.details.ISBN}}
+                        </div>
+                        <div class="chip  tooltipped" data-position="top" data-delay="50" data-tooltip="Binding">
+                            <i class="fa fa-book"> </i> {{book.details.Binding}}
+                        </div>
+                        <div class="chip  tooltipped" data-position="top" data-delay="50" data-tooltip="Rating">
+                            <i class="fa fa-star"></i> {{book.rating}}
+                        </div>
+                        <div class="chip  tooltipped" data-position="top" data-delay="50" data-tooltip="Price">
+                            {{book.price}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{book.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+        </div>
+    </div>
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Portfolio</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://github.com/sudheendrachari/sudheendrachari.github.io">Github</a></li>
+                        <li><a class="white-text" href="https://sudheendrachari.github.io/capillary-challenge">App hosted on Github</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+</body>
+
+</html>
