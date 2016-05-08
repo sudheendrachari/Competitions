@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+
+<head>
+    <title>To-do app</title>
+    <style type="text/css">
+    li {
+        list-style: none;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="todoController">
+    <h2> To-Do App</h2>
+    <ul ng-repeat="(value, key) in items">
+        <li>
+            <div style="display: inline-block; width: 100px"> {{value}} </div>
+            <div class="onoffswitch" style="display: inline-block;">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{value}}" ng-model="key" ng-change="change(key, value)">
+                <label class="onoffswitch-label" for="{{value}}"></label>
+            </div>
+        </li>
+    </ul>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+</body>
+
+</html>
