@@ -7,26 +7,34 @@
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="css/lib/angular-material.min.css">
     <!--Custom Styles-->
-    <link rel="stylesheet"  href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body ng-app="app">
-    <div ng-controller="GraphController as g">
+    <div ng-controller="GraphController as g" ng-init="g.toast('Enter your name and text!')">
         <div layout="column" ng-cloak class="md-inline-form">
             <md-content layout-padding>
-                <div layout="row" layout-xs="column" layout-align="center center">
-                    <md-input-container flex-offset="5" >
-                        <label>Name</label>
-                        <input ng-model="g.name">
-                    </md-input-container>
-                    <md-input-container flex-offset="5" >
-                        <label>Text</label>
-                        <input ng-model="g.text">
-                    </md-input-container>
-                    <md-input-container flex-offset="" >
-	                    <md-button id="btn" class="md-raised md-primary" ng-click="g.generateGraph()">Generate Graph!</md-button>
-                    </md-input-container>
-                </div>
+                <!-- <div layout="row" layout-xs="column" layout-align="center center"> -->
+                    <form name="graphForm" layout="row" layout-xs="column" layout-align="center center">
+                        <md-input-container flex-offset="5">
+                            <label>Name</label>
+                            <input  name="gname" ng-model="g.name" required>
+                            <div ng-messages="graphForm.gname.$error">
+                              <div ng-message="required">Are you sure, you dont have a name?</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex-offset="5">
+                            <label>Text</label>
+                            <input name="gtext" ng-model="g.text" required>
+                            <div ng-messages="graphForm.gtext.$error">
+                              <div ng-message="required">Why don't you type something?</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex-offset="">
+                            <md-button id="btn" class="md-raised md-primary"  ng-disabled="graphForm.$invalid" ng-click="g.generateGraph()">Generate Graph!</md-button>
+                        </md-input-container>
+                    </form>
+                <!-- </div> -->
             </md-content>
         </div>
         <my-graph data="g.data" render="g.rerender"></my-graph>
@@ -37,9 +45,7 @@
     <script src="js/lib/angular-messages.min.js"></script>
     <!-- Angular Material Library -->
     <script src="js/lib/angular-material.min.js"></script>
-
     <script src="js/lib/d3.v3.min.js"></script>
-
     <script src="js/app.js"></script>
     <script src="js/graph-controller.app.js"></script>
     <script src="js/graph-directive.app.js"></script>

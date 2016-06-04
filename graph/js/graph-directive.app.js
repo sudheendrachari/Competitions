@@ -10,7 +10,7 @@
 		            	data : '=',
 		            	render: '='
 		            },
-		            template: '<div id="graph"> </div>',
+		            template: '<div id="graph" style="background:white" > </div>',
 		            restrict: 'E'
 		        };
 		    return directive;
@@ -22,7 +22,7 @@
 
             	let svg = d3.select("#graph").append("svg").attr("width", width).attr("height", height);
 	            function reDraw() {
-	            	svg.attr("width", window.innerWidth * 0.8).attr("height", 500);  
+	            	svg.attr("width", window.innerWidth ).attr("height", 500);  
             		renderGraph(scope.data);
 	            }
 	            window.addEventListener('resize', reDraw);
@@ -64,10 +64,10 @@
 	            	        })
 	            	        .call(force.drag);
 
-	            	    // gnodes.append("text")
-	            	    //     .text(function(d) {
-	            	    //         return d.name;
-	            	    //     });
+	            	    gnodes.append("title")
+	            	        .text(function(d) {
+	            	            return d.name;
+	            	        });
 
 	            	    force.on("tick", function() {
 	            	        link.attr("x1", function(d) {
