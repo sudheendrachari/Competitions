@@ -1,0 +1,17 @@
+    .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
+    }
+
+    #btn{
+        margin-left: 30px;
+    }
+    svg{
+        display: block;
+        margin: 0 auto;
+    }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | Cognitive Scale</title>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="css/lib/angular-material.min.css">
+    <!--Custom Styles-->
+    <link rel="stylesheet"  href="css/style.css">
+</head>
+
+<body ng-app="app">
+    <div ng-controller="GraphController as g">
+        <div layout="column" ng-cloak class="md-inline-form">
+            <md-content layout-padding>
+                <div layout="row" layout-xs="column" layout-align="center center">
+                    <md-input-container flex-offset="5" >
+                        <label>Name</label>
+                        <input ng-model="g.name">
+                    </md-input-container>
+                    <md-input-container flex-offset="5" >
+                        <label>Text</label>
+                        <input ng-model="g.text">
+                    </md-input-container>
+                    <md-input-container flex-offset="" >
+	                    <md-button id="btn" class="md-raised md-primary" ng-click="g.generateGraph()">Generate Graph!</md-button>
+                    </md-input-container>
+                </div>
+            </md-content>
+        </div>
+        <my-graph data="g.data" render="g.rerender"></my-graph>
+    </div>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-aria.min.js"></script>
+    <script src="js/lib/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="js/lib/angular-material.min.js"></script>
+
+    <script src="js/lib/d3.v3.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/graph-controller.app.js"></script>
+    <script src="js/graph-directive.app.js"></script>
+    <!-- Roboto Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+</body>
+
+</html>
