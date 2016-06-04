@@ -41,8 +41,7 @@
 
         function generateGraph() {
             let density = letterDensity(scope.name, scope.text),
-                g = 1,
-                letter, val = 0;
+                g = 1, letter, val = 0;
             scope.data.nodes = [];
             scope.data.links = [];
             for (letter in density) {

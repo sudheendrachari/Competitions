@@ -16,9 +16,7 @@
 		    return directive;
 
 		    function link(scope, element, attrs) {
-	            let d3 = window.d3;
-            	let width = 960,
-            	    height = 500;
+	            let d3 = window.d3, width = 960,   height = 500;
 
             	let svg = d3.select("#graph").append("svg").attr("width", width).attr("height", height);
 	            function reDraw() {
@@ -33,13 +31,10 @@
 
 	            	let force = d3.layout.force()
 	            	    .charge(-500)
-	            	    .linkDistance(function(link) {
-	            	    	return graphData.nodes[0].value +  link.value;
-	            	    })
+	            	    .linkDistance(link => graphData.nodes[0].value +  link.value )
 	            	    .size([width, height]);
 
-	            	    force
-	            	        .nodes(graphData.nodes)
+	            	    force.nodes(graphData.nodes)
 	            	        .links(graphData.links)
 	            	        .start()
 	            	        .friction(0.9);
@@ -56,39 +51,21 @@
 	            	       .classed('gnode', true);
 	            	    let node = gnodes.append("circle")
 	            	        .attr("class", "node")
-	            	        .attr("r", function(d){
-	            	        	return d.value;
-	            	        })
-	            	        .style("fill", function(d) {
-	            	            return color(d.group);
-	            	        })
+	            	        .attr("r", d => d.value)
+	            	        .style("fill", d => color(d.group))
 	            	        .call(force.drag);
 
 	            	    gnodes.append("title")
-	            	        .text(function(d) {
-	            	            return d.name;
-	            	        });
+	            	        .text(d => d.name);
 
 	            	    force.on("tick", function() {
-	            	        link.attr("x1", function(d) {
-	            	                return d.source.x;
-	            	            })
-	            	            .attr("y1", function(d) {
-	            	                return d.source.y;
-	            	            })
-	            	            .attr("x2", function(d) {
-	            	                return d.target.x;
-	            	            })
-	            	            .attr("y2", function(d) {
-	            	                return d.target.y;
-	            	            });
+	            	        link.attr("x1", d => d.source.x)
+	            	            .attr("y1", d => d.source.y)
+	            	            .attr("x2", d => d.target.x)
+	            	            .attr("y2", d => d.target.y);
 
-	            	        node.attr("cx", function(d) {
-	            	                return d.x;
-	            	            })
-	            	            .attr("cy", function(d) {
-	            	                return d.y;
-	            	            });
+	            	        node.attr("cx", d => d.x)
+	            	            .attr("cy", d => d.y);
 	            	    });
 	            }
 		    }
