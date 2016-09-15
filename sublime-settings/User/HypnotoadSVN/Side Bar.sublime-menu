@@ -1,0 +1,40 @@
+[
+    { "caption": "-" },
+    { "caption": "SVN Update", "command": "hypno_svn_update", "args": {"paths":[]}},
+    { "caption": "SVN Commit", "command": "hypno_svn_commit", "args": {"paths":[]}},
+    { "caption": "SVN Merge", "command": "hypno_svn_merge", "args": {"paths":[]}},
+    { "caption": "SVN Diff", "command": "hypno_svn_diff", "args": {"paths":[]}},
+    { "caption": "SVN Diff with previous version", "command": "hypno_svn_diff_previous", "args": {"paths":[]}},
+    {
+        "caption": "SVN",
+        "children": [
+            { "caption": "Checkout", "command": "hypno_svn_checkout", "args": {"paths":[]}},
+            { "caption": "Check for Modifications", "command": "hypno_svn_status", "args": {"paths":[]}},
+            { "caption": "Log", "command": "hypno_svn_log", "args": {"paths":[]}},
+            { "caption": "Log N", "command": "hypno_svn_log_number", "args": {"paths":[]}},
+            { "caption": "-" },
+            { "caption": "Update to Revision", "command": "hypno_svn_update_revision", "args": {"paths":[]}},
+            { "caption": "Add", "command": "hypno_svn_add", "args": {"paths":[]}},
+            { "caption": "Rename", "command": "hypno_svn_rename", "args": {"paths":[]}},
+            { "caption": "Move", "command": "hypno_svn_move", "args": {"paths":[]}},
+            { "caption": "Delete", "command": "hypno_svn_delete", "args": {"paths":[]}},
+            { "caption": "Revert", "command": "hypno_svn_revert", "args": {"paths":[]}},
+            { "caption": "Revert All", "command": "hypno_svn_revert_all", "args": {"paths":[]}},
+            { "caption": "Blame", "command": "hypno_svn_blame", "args": {"paths":[]}},
+            { "caption": "-" },
+            { "caption": "Cleanup", "command": "hypno_svn_cleanup", "args": {"paths":[]}},
+            { "caption": "Edit Conflicts", "command": "hypno_svn_conflict_editor", "args": {"paths":[]}},
+            { "caption": "Resolve", "command": "hypno_svn_resolve", "args": {"paths":[]}},
+            { "caption": "-" },
+            { "caption": "Merge reintegrate", "command": "hypno_svn_merge_reintegrate", "args": {"paths":[]}},
+            { "caption": "Switch", "command": "hypno_svn_switch", "args": {"paths":[]}},
+            { "caption": "Switch ignore ancestry", "command": "hypno_svn_switch_ignore_ancestry", "args": {"paths":[]}},
+            { "caption": "Branch", "command": "hypno_svn_branch", "args": {"paths":[]}},
+            { "caption": "-" },
+            { "caption": "Lock", "command": "hypno_svn_lock", "args": {"paths":[]}},
+            { "caption": "Steal Lock", "command": "hypno_svn_steal_lock", "args": {"paths":[]}},
+            { "caption": "Unlock", "command": "hypno_svn_unlock", "args": {"paths":[]}}
+        ]
+    },
+    { "caption": "-", "id": "end" }
+]

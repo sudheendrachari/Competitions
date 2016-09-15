@@ -1,6 +1,6 @@
 {
 "cmd": ["node", "$file"],
-"selector": "app.js",
+"selector": "source.js",
 "windows":
     {
     	"cmd": ["node", "$file"],

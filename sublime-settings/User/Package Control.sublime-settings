@@ -16,6 +16,7 @@
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
-		"TortoiseSVN"
+		"TortoiseSVN",
+		"TypeScript"
 	]
 }
